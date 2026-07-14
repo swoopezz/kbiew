@@ -34,12 +34,12 @@ namespace kbiew::key {
 	struct Equals   { const std::string_view view = "="; const int in_bytes = 0; };
 	struct BracketL { const std::string_view view = "["; const int in_bytes = 0; };
 	struct BracketR { const std::string_view view = "]"; const int in_bytes = 0; };
-	struct Backslash{ const std::string_view view = "\\"; const int in_bytes = 0; };
+	struct Backslash{ const std::string_view view = "  \\  "; const int in_bytes = 0; };
 	struct Semicolon{ const std::string_view view = ";"; const int in_bytes = 0; };
 	struct Apostrophe{ const std::string_view view = "'"; const int in_bytes = 0; };
 	struct Comma    { const std::string_view view = ","; const int in_bytes = 0; };
 	struct Period   { const std::string_view view = "."; const int in_bytes = 0; };
-	struct Slash    { const std::string_view view = "/"; const int in_bytes = 0; };
+	struct Slash    { const std::string_view view = "  /  "; const int in_bytes = 0; };
 	struct Grave    { const std::string_view view = "`"; const int in_bytes = 0; };
 	struct Tilde    { const std::string_view view = "~"; const int in_bytes = 0; };
 
@@ -93,16 +93,16 @@ namespace kbiew::key {
 	struct NumpadMultiply { const std::string_view view = "*"; const int in_bytes = 0; };
 	struct NumpadDivide   { const std::string_view view = "/"; const int in_bytes = 0; };
 	struct NumpadDecimal  { const std::string_view view = "."; const int in_bytes = 0; };
-	struct NumpadEnter    { const std::string_view view = "Enter"; const int in_bytes = 0; };
+	struct NumpadEnter    { const std::string_view view = "Etr"; const int in_bytes = 0; };
 	struct NumpadEqual    { const std::string_view view = "="; const int in_bytes = 0; };
 	
 	struct Space  { const std::string_view view = "                   "; const int in_bytes = 0; };
-	struct Enter  { const std::string_view view = "etr"; const int in_bytes = 0; };
+	struct Enter  { const std::string_view view = "Etr"; const int in_bytes = 0; };
 	struct Esc    { const std::string_view view = "ESC"; const int in_bytes = 0; };
-	struct BS 	  { const std::string_view view = "<-"; const int in_bytes = 0;	};
+	struct BS 	  { const std::string_view view = "<--"; const int in_bytes = 0;	};
 	struct Tab 	  { const std::string_view view = "Tab"; const int in_bytes = 0; };
 
-	struct CapsLock { const std::string_view view = "CLck"; const int in_bytes = 0; };
+	struct CapsLock { const std::string_view view = "CLock"; const int in_bytes = 0; };
 	struct LShift { const std::string_view view = "Shift"; const int in_bytes = 0; };
 	struct LCtrl { const std::string_view view = "Ctrl"; const int in_bytes = 0;};
 	struct Super { const std::string_view view = "Super"; const int in_bytes = 0;};
@@ -119,6 +119,8 @@ namespace kbiew::key {
 	struct Num9 { const std::string_view view = "9"; const int in_bytes = 0; };
 	struct Plus { const std::string_view view = "+"; const int in_bytes = 0; };
 	struct Minus{ const std::string_view view = "-"; const int in_bytes = 0; };
+	
+	struct Empty{ const std::string_view view = " "; const int in_bytes = 0; };
 
 	using Any = std::variant<
     	Esc, BS, Tab, CapsLock, LShift, LCtrl, Super,
@@ -141,6 +143,7 @@ namespace kbiew::key {
     	NumpadAdd, NumpadSubtract, NumpadMultiply, NumpadDivide,
     	NumpadDecimal, NumpadEnter, NumpadEqual,
 
-    	Space, Enter
+    	Space, Enter,
+		Empty
 	>;
 }
