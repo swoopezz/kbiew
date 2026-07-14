@@ -7,13 +7,13 @@
 
 namespace kbiew {
 	void render(const Keyboard& kb, char pressed) {
-		const KbLayout layout = kb.kbLayout();
+		const KbLayout& layout = kb.kbLayout();
 
-		for (int i = 0; i < layout.size(); i++) {
+		for (auto i = 0; i < layout.size(); i++) {
 			std::string upline = ",";
 			std::string line = "| ";
 			std::string downline = "'";
-			for (int j = 0; j < layout[i].size(); j++) {
+			for (auto j = 0; j < layout[i].size(); j++) {
 				std::visit([&](const auto& arg) {
 					for(int n = 0; n < arg.view.size()+2; n++) {
 						upline+="-";
