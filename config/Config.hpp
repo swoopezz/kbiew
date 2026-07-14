@@ -12,4 +12,9 @@ static const std::vector<std::vector<key::Any>> LAYOUT = {
 	{ key::LShift{}, key::Z{}, key::X{}, key::C{}, key::V{}, key::B{}, key::N{}, key::M{}, key::Comma{}, key::Period{}, key::Slash{}, key::RShift{}           							   },
 	{ key::LCtrl{}, key::Super{}, key::LAlt{},                           key::Space{},                                             key::RAlt{}, key::Empty{}, key::RCtrl{}, 			   }
 };
+
+
+//read https://gist.github.com/ConnerWill/d4b6c776b509add763e17f9f113fd25b
+// 0 to clear
+static constexpr int TERM_COLOR = 34;
 }

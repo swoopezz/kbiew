@@ -1,11 +1,12 @@
 #include "Render.hpp"
 #include "Keyboard.hpp"
+#include "Config.hpp"
 #include <iostream>
 #include <string>
 #include <variant>
 
 namespace kbiew {
-	void render(const Keyboard& kb) {
+	void render(const Keyboard& kb, char pressed) {
 		const KbLayout layout = kb.kbLayout();
 
 		for (int i = 0; i < layout.size(); i++) {
@@ -18,9 +19,14 @@ namespace kbiew {
 						upline+="-";
 						downline+="-";
 					}
-					line += std::string(arg.view) + " | ";
+					if (arg.ascii == pressed) {
+						line += "\033[" + std::to_string(config::TERM_COLOR) + "m"
+						+ std::string(arg.view) + "\033[0m | ";
+					} else {
+						line += std::string(arg.view) + " | ";
+					}
 					upline+=",";
-					downline+="'";				
+					downline+="'";
 				}, layout[i][j]);
 			}
 			if (i == 0)
