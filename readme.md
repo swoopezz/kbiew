@@ -1,0 +1,1 @@
+kbiew is a minimalist C++ console application that renders a keyboard layout using ASCII art and provides real‑time visual feedback for key presses. The layout and color scheme are defined in a single header‑based configuration (config/Config.hpp), making it easy to customize or extend.
