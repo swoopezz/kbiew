@@ -98,7 +98,7 @@ namespace kbiew::key {
 	
 	struct Space  { const std::string_view view = "                   "; const char ascii = ' '; };
 	struct Enter  { const std::string_view view = "Etr"; const char ascii = '\n'; };
-	struct Esc    { const std::string_view view = "ESC"; const char ascii = 27; }; // ESC
+	struct Esc    { const std::string_view view = "ESC"; const char ascii = '`'; }; // ESC
 	struct BS 	  { const std::string_view view = "<--"; const char ascii = '\b'; };
 	struct Tab 	  { const std::string_view view = "Tab"; const char ascii = '\t'; };
 
